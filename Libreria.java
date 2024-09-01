@@ -41,19 +41,6 @@ public class Libreria {
         }
         return mayorValor;
     }
-    public void EjecutarPunto3(){
-        int cantidad= 0;
-        System.out.println("Ingrese la cantidad de registros");
-        cantidad = sc.nextInt();
-        Libreria[][] matriz = new Libreria[cantidad][cantidad];
-        Libreria li = new Libreria();
-        double PrecioMayor=0;
-        matriz =li.LlenarMatriz(cantidad);
-        PrecioMayor=li.PrecioMayor(matriz);
-        System.out.println("El libro mas costoso es: "+PrecioMayor);
-
-    }
-
     public Libreria[][] LlenarMatriz(int cantidad){
         Libreria[][] matriz = new Libreria[cantidad][cantidad];
         for (int i = 0; i < matriz.length; i++) {
@@ -70,5 +57,17 @@ public class Libreria {
             }
         }
         return matriz;
+    }
+    public void EjecutarPunto3(){
+        int cantidad= 0;
+        System.out.println("Ingrese la cantidad de registros");
+        cantidad = sc.nextInt();
+        Libreria[][] matriz = new Libreria[cantidad][cantidad];
+        Libreria li = new Libreria();
+        double PrecioMayor=0;
+        matriz =li.LlenarMatriz(cantidad);
+        PrecioMayor=li.PrecioMayor(matriz);
+        System.out.println("El libro mas costoso es: "+PrecioMayor);
+
     }
 }

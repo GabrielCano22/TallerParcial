@@ -47,12 +47,13 @@ class Articulo{
 }
     public class StockProductos {
         Scanner sc = new Scanner(System.in);
+        int filas =0, columnas=0;
 
         public void ejecutar() {
             System.out.print("Ingrese el número de filas de las matrices: ");
-            int filas = sc.nextInt();
+            filas = sc.nextInt();
             System.out.print("Ingrese el número de columnas de las matrices: ");
-            int columnas = sc.nextInt();
+            columnas = sc.nextInt();
             sc.nextLine();
 
             Articulo[][] matrizTienda1 = llenarMatriz(filas, columnas, "primera");
@@ -65,16 +66,19 @@ class Articulo{
         }
 
         public Articulo[][] llenarMatriz(int filas, int columnas, String tienda) {
+            String nombre =  "";
+            double precio = 0.0;
+            int stock = 0;
             Articulo[][] matriz = new Articulo[filas][columnas];
             System.out.println("Ingrese los productos para la " + tienda + " tienda:");
             for (int i = 0; i < filas; i++) {
                 for (int j = 0; j < columnas; j++) {
                     System.out.print("Ingrese el nombre del producto (" + i + "," + j + "): ");
-                    String nombre = sc.next();
+                    nombre = sc.next();
                     System.out.print("Ingrese el precio del producto (" + i + "," + j + "): ");
-                    double precio = sc.nextDouble();
+                    precio = sc.nextDouble();
                     System.out.print("Ingrese el stock del producto (" + i + "," + j + "): ");
-                    int stock = sc.nextInt();
+                    stock = sc.nextInt();
                     matriz[i][j] = new Articulo(nombre, precio, stock);
                 }
             }
@@ -84,12 +88,12 @@ class Articulo{
         public Articulo[][] fusionarMatrices(Articulo[][] matriz1, Articulo[][] matriz2, int filas, int columnas) {
             Articulo[][] matrizFusionada = new Articulo[filas * columnas][1];
             int indiceFusionada = 0;
-
+            boolean encontrado = true;
             for (int i = 0; i < matriz1.length; i++) {
                 for (int j = 0; j < matriz1[i].length; j++) {
                     Articulo articulo = matriz1[i][j];
                     if (articulo != null) {
-                        boolean encontrado = false;
+                        encontrado = false;
                         for (int k = 0; k < indiceFusionada; k++) {
                             if (matrizFusionada[k][0] != null && matrizFusionada[k][0].esIgual(articulo)) {
                                 matrizFusionada[k][0].sumarStock(articulo.getStock());
@@ -109,7 +113,7 @@ class Articulo{
                 for (int j = 0; j < matriz2[i].length; j++) {
                     Articulo articulo = matriz2[i][j];
                     if (articulo != null) {
-                        boolean encontrado = false;
+                        encontrado = false;
                         for (int k = 0; k < indiceFusionada; k++) {
                             if (matrizFusionada[k][0] != null && matrizFusionada[k][0].esIgual(articulo)) {
                                 matrizFusionada[k][0].sumarStock(articulo.getStock());

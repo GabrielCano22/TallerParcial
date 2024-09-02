@@ -23,5 +23,24 @@ public class Main {
         // stockProductos.ejecutar();
         /*---------------------------------------------------------- */
         /*PUNTO 6 DEL TALLER */
+        // Estanteria estanteria = new Estanteria();
+        // estanteria.ejecutar();
+        /*---------------------------------------------------------- */
+        /*PUNTO 7 DEL TALLER */
+        // Escuela escuela = new Escuela();
+        // escuela.ejecutar();
+        /*---------------------------------------------------------- */
+        /*PUNTO 8 DEL TALLER DUDAS*/
+        // Inventario inventario = new Inventario();
+        // inventario.ejecutar();
+        /*---------------------------------------------------------- */
+        /*PUNTO 9 DEL TALLER */
+        // GestorVentas gestor = new GestorVentas();
+        // gestor.ejecutar();
+        /*---------------------------------------------------------- */
+        /*PUNTO 10 DEL TALLER */
+        // GestorElementos gestor = new GestorElementos();
+        // gestor.ejecutar();
+        /*---------------------------------------------------------- */
     }
 }
